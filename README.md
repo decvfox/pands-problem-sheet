@@ -40,8 +40,8 @@ It is the weekend, yay!
 
 I used both the datetime and time modules in my code.
 
-[Datetime](https://docs.python.org/3/library/datetime.html) and 
-[Time](https://docs.python.org/3/library/time.html?highlight=time#module-time) information on usage at docs.python.org
+click [Datetime](https://docs.python.org/3/library/datetime.html) or 
+[Time](https://docs.python.org/3/library/time.html?highlight=time#module-time) for usage information at docs.python.org
 
 ```python
 time.strftime("%A")
