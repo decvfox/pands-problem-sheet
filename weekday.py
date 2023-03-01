@@ -16,3 +16,4 @@ if weekday_number > 5:
     print('It is the weekend, yay!')
 else:
     print('Yes, unfortunately today is a weekday.')         
+    
