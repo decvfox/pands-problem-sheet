@@ -16,7 +16,8 @@ print("Hello World!")
 The program should:
 -   Prompt the user and read in two money amounts (in cent)
 -   Add the two amounts
--   Print out the answer in a human readable format with a euro sign and decimal point between the euro and cent of the amount
+-   Print out the answer in a human readable format with a euro 
+    sign and decimal point between the euro and cent of the amount
 ```  
 ```python
 amount1 = int(input("Enter amount1 in cents: "))
@@ -55,7 +56,7 @@ for  i  in  range(0, (len(account_number)- 4)):
 hidden_numbers += 'X'
 print(hidden_numbers + visible_numbers)
 ```
-This code allows all keyboard characters to be used, I was going to add checks to ensure only numeric or alpha-numeric numbers were used, but as applications usually only display account numbers  in this format to show users which one of their accounts was used, I felt it wasn't necessary.
+This code allows all keyboard characters to be used, I was going to add checks to ensure only numeric or alpha-numeric characters were used, but as applications usually only display account numbers  in this format to show users which one of their accounts was used, I felt it wasn't necessary.
 
 ## Weekly Task 04
 ### collatz.py
