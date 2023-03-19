@@ -72,6 +72,17 @@ Please enter a positive integer: 10
 
 Output requires formatting to print all numbers on the same line
 ```
+```mermaid
+graph 
+A((Enter integer x))--> B{is x even?}
+B-- Yes --> D[x=x/2]
+B-- No -->E[x=x*3+1]
+D-->F[Print x]
+E-->F
+F-->G{is x = 1}
+G-- No -->B
+G-- Yes -->H[quit]
+```
 ```python
 start_number = int(input("Please enter a positive integer: "))
 print(start_number, end = ' ') 
