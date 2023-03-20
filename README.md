@@ -196,5 +196,4 @@ Please enter a positive number: 14.5
  for this iteration r = 3.8092816328050976 x = 14.5
  for this iteration r = 3.807886808393225 x = 14.5
 The square root of 14.5 is approx. 3.8078865529319628
-
-
+```
