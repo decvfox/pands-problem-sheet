@@ -148,6 +148,52 @@ date_time = datetime.date.fromisoformat('2023-02-24')
 ```
 Where you know what day of the week the date occurred on.
   
+## Weekly Task 06 
+#### square_root.py
+The Task:
+```
+Write a program that takes a positive floating-point number as input and outputs an approximation of 
+its square root.  
+You should create a function called sqrt() that does this.
+I am asking you to create your own sqrt function and not to use the built in functions 
+x ** .5 or math.sqrt(x).  
+This is to demonstrate that you can research and code a process (If you really needed the square 
+root you would use one of the above methods).
+I suggest that you look at the newton method at estimating square roots.
+This is a more difficult task than some of the others, but will be marked equally, so only do as much 
+work on this as you feel comfortable.
 
+$ python square_root.py  
+Please enter a positive number: 14.5
+The square root of 14.5 is approx. 3.8.
+```
+The Code:
+```python
+def  mySqrt(x):
+'''Calculates a square root'''
+	r = x
+	precision = 10 ** (-10)
+
+	while  abs(x - r * r) > precision:
+		r = (r + x / r) / 2
+	return  r
+
+num = float(input('Please enter a positive number: '))
+print(f'The square root of {num} is approx. {mySqrt(num)}')
+```
+Below is the formula for the calculation that's carried out inside the while loop:
+$$
+r = \frac{(x/r)+r}{2}
+$$
+r is updated each time the while loop is cycled through and here we can see the value for r getting more precise for each iteration. 
+```
+Please enter a positive number: 14.5
+ for this iteration r = 14.5 x = 14.5
+ for this iteration r = 7.75 x = 14.5
+ for this iteration r = 4.810483870967742 x = 14.5
+ for this iteration r = 3.912366830706 x = 14.5
+ for this iteration r = 3.8092816328050976 x = 14.5
+ for this iteration r = 3.807886808393225 x = 14.5
+The square root of 14.5 is approx. 3.8078865529319628
 
 
