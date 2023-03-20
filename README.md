@@ -182,7 +182,9 @@ num = float(input('Please enter a positive number: '))
 print(f'The square root of {num} is approx. {mySqrt(num)}')
 ```
 Below is the formula for the calculation that's carried out inside the while loop:
+
 $r = \frac{(x/r)+r}{2}$ 
+
 r is updated each time the while loop is cycled through and here we can see the value for r getting more precise for each iteration. 
 ```
 Please enter a positive number: 14.5
