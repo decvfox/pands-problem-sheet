@@ -2,23 +2,26 @@
 
 ## Weekly Task 01
 ### helloworld.py
+The Task:
 ```
 Commit and push a file to the problem sheet called helloworld.py
 This file should contain a python program that displays Hello World! when it is run.
 ```
+The Code:
 ```python
 print("Hello World!")
 ```
 
 ## Weekly Task 02
 ### Bank.py
+The Task:
 ```
 The program should:
 -   Prompt the user and read in two money amounts (in cent)
 -   Add the two amounts
--   Print out the answer in a human readable format with a euro 
-    sign and decimal point between the euro and cent of the amount
-```  
+-   Print out the answer in a human readable format with a euro sign and decimal point between the euro and cent of the amount
+``` 
+The Code: 
 ```python
 amount1 = int(input("Enter amount1 in cents: "))
 amount2 = int(input("Enter amount2 in cents: "))
@@ -29,10 +32,12 @@ I used f-Strings which makes string formatting easier and makes the code easier 
 [Click here to learn more about f-Strings](https://realpython.com/python-f-strings/)
 ## Weekly Task 03
 ### accounts.py
+The Task:
 ```
 Write a python program called **accounts.py** that reads in a 10 character account number and 
 outputs the account number with only the last 4 digits showing (and the first 6 digits replaced with Xs).
 ```
+The Code:
 ```python
 account_number = input("Please enter an 10 digit account number: ")
 visible_number = account_number[6:10]
@@ -47,6 +52,7 @@ Extra:
 Modify the program to deal with account numbers of any length (yes that is a vague 
 requirement, comment your assumptions)
 ```
+The Final Code:
 ```python
 hidden_numbers = ''
 account_number = input("Please enter an account number: ")
@@ -56,13 +62,16 @@ for  i  in  range(0, (len(account_number)- 4)):
 hidden_numbers += 'X'
 print(hidden_numbers + visible_numbers)
 ```
-This code allows all keyboard characters to be used, I was going to add checks to ensure only numeric or alpha-numeric characters were used, but as applications usually only display account numbers  in this format to show users which one of their accounts was used, I felt it wasn't necessary.
+This code allows all keyboard characters to be used, I was going to add checks to ensure only numeric or alpha-numeric numbers were used, but as applications usually only display account numbers  in this format to show users which one of their accounts was used, I felt it wasn't necessary.
 
 ## Weekly Task 04
 ### collatz.py
+The Task:
 ``` 
-Write a program, called collatz.py, that asks the user to input any positive integer and outputs the successive values of the following calculation.
-At each step calculate the next value by taking the current value and, if it is even, divide it by two, but if it is odd, multiply it by three and add one.
+Write a program, called collatz.py, that asks the user to input any positive 
+integer and outputs the successive values of the following calculation.
+At each step calculate the next value by taking the current value and, if it is 
+even, divide it by two, but if it is odd, multiply it by three and add one.
 Have the program end if the current value is one.
 
 Example of it running:
@@ -72,61 +81,73 @@ Please enter a positive integer: 10
 
 Output requires formatting to print all numbers on the same line
 ```
+Program Flow:
 ```mermaid
 graph 
-A((Enter integer x))--> B{is x even?}
-B-- Yes --> D[x=x/2]
-B-- No -->E[x=x*3+1]
+A((Input x))-->B{is x even?}
+B--Yes-->D[x=x//2]
+B--No-->E[x=x*3+1]
 D-->F[Print x]
 E-->F
 F-->G{is x = 1}
 G-- No -->B
-G-- Yes -->H[quit]
+G--Yes-->H[quit]
 ```
+The Code:
 ```python
-start_number = int(input("Please enter a positive integer: "))
-print(start_number, end = ' ') 
+number = int(input("Please enter a positive integer: "))
+print(number, end = ' ') 
  
-while  start_number > 1:
-	if  start_number % 2 == 0: # checks if even
-		start_number //= 2  # // keeps results as integers
+while number > 1:
+	if number % 2 == 0:
+		number //= 2
 	else:
-		start_number = (start_number * 3) + 1
+		number = (start_number * 3) + 1
 print(start_number, end = ' ')
 ```
+I used the // operator to ensure that an integer was returned after each division and the % operator to check if the number was even as there is no remainder when an even number is divided by 2.
 
-### Weekly Task 05
+## Weekly Task 05  
 #### weekday.py
+The Task:
+```
 Write a program that outputs whether or not today is a weekday.
+An example of running this program on a Thursday is given below.
+$ python weekday.py
+`Yes, unfortunately today is a weekday.`
 
-E.G. for Thursday:
+An example of running it on a Saturday is as follows:
+$ python weekday.py
+`It is the weekend, yay!`
 ```
-Yes, unfortunately today is a weekday.
-```
-For sunday:
-```
-It is the weekend, yay!
-```
+The Code:
+```python
+import  datetime, time
 
-I used both the datetime and time modules in my code.
+weekday = time.strftime("%A")
+date_time = datetime.datetime.now()
+weekday_number = date_time.isoweekday()
 
-click [Datetime](https://docs.python.org/3/library/datetime.html) or 
-[Time](https://docs.python.org/3/library/time.html?highlight=time#module-time) for usage information at docs.python.org
+print(f'Today is {weekday}, day {weekday_number} of the week')
 
-```python
-time.strftime("%A")
+if  weekday_number > 5:
+	print('It is the weekend, yay!')
+else:
+	print('Yes, unfortunately today is a weekday.')
 ```
-Gets the name of the weekday(Sunday, Monday etc.).
+I used both the datetime and time modules in my code. 
+click [Datetime](https://docs.python.org/3/library/datetime.html) or [Time](https://docs.python.org/3/library/time.html?highlight=time#module-time) for usage information at docs.python.org
+
+For testing replace:
 ```python
-datetime.datetime.now()
+date_time = datetime.datetime.now()
 ```
-Gets the current date and time. I used
+with
 ```python
-datetime.date.fromisoformat('2023-02-24')
+date_time = datetime.date.fromisoformat('2023-02-24')
 ```
-for testing my code(e.g. for above, 24 was friday).
-```python
-date_time.isoweekday()
-```
-This returns the day of the week in number form where 1 is Monday, 2 is Tuesday and so on.
+Where you know what day of the week the date occurred on.
+  
+
+
 

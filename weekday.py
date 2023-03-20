@@ -1,4 +1,4 @@
-#  lab5.1.7-weekday.py
+# weekday.py
 # Program that outputs whether or not today is a weekday
 # ref https://docs.python.org/3/library/datetime.html
 # ref https://docs.python.org/3/library/time.html?highlight=time#module-time
