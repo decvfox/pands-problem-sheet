@@ -9,11 +9,26 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Array of 1,000 elements as specified by the task
 normo = np.random.normal(loc=5, scale=2, size=1000)
-plt.hist(normo, color='#1ECBE1')
 
-xpoints = np.array(range(1,10))
+# plot a histogram of occurrences of each number in normo
+plt.hist(normo, color='#1ECBE1', label = "Normal Dist")
+plt.legend()
+
+# create an array of numbers from 0 to 10
+xpoints = np.array(range(0,11))
+# create an array with all the elements of x points cubed
 ypoints = xpoints * xpoints * xpoints
 
-plt.plot(xpoints, ypoints, color='#C44B3B', label = "x cubed")
+# plot each element of the 2 arrays
+plt.plot(xpoints, ypoints, color='#C44B3B', label = "h(x)=x^3")
+plt.legend()
+
+# add a title and label the x and y axis
+plt.title("Histogram of Normal Distribution & Plot of X Cubed")
+plt.xlabel("x")
+plt.ylabel("h(x)=x^3")
+
+# draw the plot on screen
 plt.show()
