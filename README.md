@@ -60,7 +60,7 @@ account_number = input("Please enter an account number: ")
 visible_numbers = account_number[(len(account_number)- 4):len(account_number)]
 
 for  i  in  range(0, (len(account_number)- 4)):
-hidden_numbers += 'X'
+    hidden_numbers += 'X'
 print(hidden_numbers + visible_numbers)
 ```
 This code allows all keyboard characters to be used, I was going to add checks to ensure only numeric or alpha-numeric numbers were used, but as applications usually only display account numbers  in this format to show users which one of their accounts was used, I felt it wasn't necessary.
@@ -197,3 +197,35 @@ Please enter a positive number: 14.5
  for this iteration r = 3.807886808393225 x = 14.5
 The square root of 14.5 is approx. 3.8078865529319628
 ```
+
+## Weekly Task 07
+#### es.py
+The Task:
+```
+Write a program that reads in a text file and outputs the number of e's it contains. Think about 
+what is being asked here, document any assumptions you are making.
+
+The program should take the filename from an  **argument** on the command line. 
+I have not shown you how to do this, you need to look it up.
+
+$ python es.py moby-dick.txt
+116960
+```
+The Code:
+```python
+import  sys
+
+arg = sys.argv
+FILENAME = arg[1]
+
+def  read_text():
+	with  open(FILENAME) as  f:
+		text = f.read()
+		return  text
+
+# Main
+text = read_text()
+count = text.count('e') + text.count('E')
+print (count)
+```
+For information on Command Line Arguments visit [Real Python](https://realpython.com/python-command-line-arguments/) and [W3Schools](https://www.w3schools.com/python/ref_string_count.asp) for more on the Python String Count Method. 

@@ -8,14 +8,15 @@
 import sys
 
 arg = sys.argv # arg = ['es.py', 'es.txt']
-FILENAME = arg[1]
+FILENAME = arg[1] # FILENAME = 'es.txt'
 
 def read_text():
+    '''Function to open and read text file'''
     with open(FILENAME) as f:
         text = f.read()
         return text
 
 # Main
-text = read_text()
-count = text.count('e')
-print (count)
+text = read_text() # Calls the read_text() function
+count = text.count('e') + text.count('E') # uses the string count() function to count the es
+print (count) # prints the number of es
