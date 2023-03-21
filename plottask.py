@@ -15,11 +15,5 @@ plt.hist(normo, color='#1ECBE1')
 xpoints = np.array(range(1,10))
 ypoints = xpoints * xpoints * xpoints
 
-plt.plot(xpoints, ypoints, label = "Normal Dist")
-plt.legend()
 plt.plot(xpoints, ypoints, color='#C44B3B', label = "x cubed")
-plt.title("random histogram & Plot of x cubed")
-plt.xlabel("X")
-plt.ylabel("h(x)=x^3")
-plt.legend()
 plt.show()
