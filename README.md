@@ -226,3 +226,30 @@ count = text.count('e') + text.count('E')
 print (count)
 ```
 For information on Command Line Arguments visit [Real Python](https://realpython.com/python-command-line-arguments/) and [W3Schools](https://www.w3schools.com/python/ref_string_count.asp) for more on the Python String Count Method. 
+
+## Weekly Task 08
+#### plottask.py
+The Task:
+```
+Write a program that displays:
+-   a histogram of a normal distribution of a 1000 values with a mean of 5 and standard deviation of 2,
+-   and a plot of the function h(x)=x3  in the range [0, 10],
+on the one set of axes.
+```
+The Code:
+```python
+import  numpy  as  np
+import  matplotlib.pyplot  as  plt
+ 
+normo = np.random.normal(loc=5, scale=2, size=1000)
+plt.hist(normo, color='#1ECBE1')
+
+xpoints = np.array(range(1,10))
+ypoints = xpoints * xpoints * xpoints
+
+plt.plot(xpoints, ypoints, color='#C44B3B', label = "x cubed")
+plt.show()
+```
+The Plot:
+![](https://github.com/decvfox/pands-problem-sheet/blob/22103ba91181cf9cf3445ad10012707fa2398562/plot.png)
+Visit W3Schools for more on [numpy](https://www.w3schools.com/python/numpy/numpy_random_normal.asp) and [matplotlib](https://www.w3schools.com/python/matplotlib_pyplot.asp)
