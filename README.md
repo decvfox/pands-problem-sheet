@@ -253,6 +253,6 @@ plt.show()
 
 The Plot:
 
-![](https://github.com/decvfox/pands-problem-sheet/blob/22103ba91181cf9cf3445ad10012707fa2398562/plot.png)
+![](https://github.com/decvfox/pands-problem-sheet/blob/main/plot.png)
 
 Visit W3Schools for more on [numpy](https://www.w3schools.com/python/numpy/numpy_random_normal.asp) and [matplotlib](https://www.w3schools.com/python/matplotlib_pyplot.asp)
