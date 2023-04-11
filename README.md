@@ -27,7 +27,10 @@ The Code:
 amount1 = int(input("Enter amount1 in cents: "))
 amount2 = int(input("Enter amount2 in cents: "))
 sum = amount1 + amount2
-print(f'The sum of these is €{(sum / 100)}')
+euros = sum // 100
+cents = sum % 100 
+
+print(f'The sum of these is €{euros}.{cents}')
 ```
 I used f-Strings which makes string formatting easier and makes the code easier to understand.
 [Click here to learn more about f-Strings](https://realpython.com/python-f-strings/)
